@@ -155,9 +155,12 @@
 		<!-- /move top -->
 	</section>
 </footer>
-
+<script>
+const base_url = "<?= base_url()?>";
+</script>
 <script src="<?= JS_VENDORS?>autotrack.js"></script>
 <script src="<?= JS_VENDORS?>js"></script>
+<script src="<?= JS?><?= $data['page_functions']?>"></script>
 </body>
 
 </html>

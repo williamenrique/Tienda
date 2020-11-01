@@ -101,39 +101,8 @@
 			<input id="tab1" type="radio" name="tabs" checked="">
 			<label class="tabtle" for="tab1">Latest Ads</label>
 			<section id="content1" class="tab-content text-left">
-				<div class="d-grid grid-col-3">
-					<!-- item 1 -->
-					<div class="product">
-						<a href="<?= base_url()?>producto">
-							<img src=" <?= IMG?>items/11.jpg" class="img-responsive" alt="">
-						</a>
-						<div class="info-bg">
-							<h5><a href="<?= base_url()?>producto">Sed
-									ut perspiciatis unde omnis iste natus</a></h5>
-							<p>Nulla ex nunc</p>
-							<ul class="d-flex">
-								<li><span class="fas fa-usd"></span> 1200</li>
-								<li class="margin-effe"><a href="#" title="Add this to Favorite"><span
-											class="far fa-heart-o"></span></a></li>
-								<li><a href="#" title="Share"><span class="fas fa-share"></span></a></li>
-							</ul>
-						</div>
-					</div>
-					<!-- item2 -->
-					<div class="product">
-						<a href="<?= base_url()?>producto"><img src=" <?= IMG?>items/11.jpg" class="img-responsive" alt=""></a>
-						<div class="info-bg">
-							<h5><a href="<?= base_url()?>producto">Sed
-									ut perspiciatis unde omnis iste natus</a></h5>
-							<p>Nulla ex nunc</p>
-							<ul class="d-flex">
-								<li><span class="fas fa-usd"></span> 1200</li>
-								<li class="margin-effe"><a href="#" title="Add this to Favorite"><span
-											class="far fa-heart-o"></span></a></li>
-								<li><a href="#" title="Share"><span class="fas fa-share"></span></a></li>
-							</ul>
-						</div>
-					</div>
+				<div class="d-grid grid-col-3 boxProduct">
+
 
 				</div>
 			</section>

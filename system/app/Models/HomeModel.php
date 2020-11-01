@@ -1,18 +1,19 @@
 <?php
 class HomeModel extends Mysql {
 	public function __construct(){
-	//heradar la clase padre 
+	//heradar la clase padre
 		parent::__construct();
 	}
+	public function getItems(){
+		$sqlQuery = "SELECT * FROM table_producto";
+		$request = $this->select_all($sqlQuery);
+		return $request;
+	}
+	/*
 	public function setuser(string $nombre, int $edad){
 		$sqlQuery = "INSERT INTO usuario(nombre, edad) VALUES(?,?)";
 		$arrData = array($nombre, $edad);
 		$request = $this->insert($sqlQuery,$arrData);
-		return $request;
-	}
-	public function getUser($id){
-		$sqlQuery = "SELECT * FROM usuario WHERE id_usuario = $id";
-		$request = $this->select($sqlQuery);
 		return $request;
 	}
 	public function getUsers(){
@@ -31,5 +32,5 @@ class HomeModel extends Mysql {
 		$request = $this->update($sqlQuery,$arrData);
 		return $request;
 	}
-	
+	*/
 }
