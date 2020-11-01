@@ -1,5 +1,5 @@
 <?= header_main($data) ?>
-
+<link rel="stylesheet" href="<?= CSS_VENDORS?>style-liberty.css">
 <section>
 
 	<!-- content -->
