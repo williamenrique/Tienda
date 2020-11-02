@@ -11,7 +11,6 @@ class Home extends Controllers{
 	}
 
 	public function getItems(){
-
 		$arrData = $this->model->getItems();
 		$html = "";
 		foreach ($arrData as $item) {
