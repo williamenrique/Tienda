@@ -5,7 +5,7 @@ class HomeModel extends Mysql {
 		parent::__construct();
 	}
 	public function getItems(){
-		$sqlQuery = "SELECT a.product_nombre, b.categ_nombre, a.product_img, a.product_descripcion, a.product_precio, a.product_fechaPublicacion
+		$sqlQuery = "SELECT a.product_nombre, b.categ_nombre, a.product_img, a.product_descripcion, a.product_precio, a.product_condicion, a.product_fechaPublicacion
 									FROM 	table_producto a JOIN table_categoria b
 									WHERE	a.product_categoria = b.categ_id ORDER BY rand() LIMIT 6";
 		$request = $this->select_all($sqlQuery);

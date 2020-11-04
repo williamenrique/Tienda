@@ -11,9 +11,8 @@
 	<meta name="robots" content="noindex">
 	<link rel="icon" type="image/png" href="<?= IMG?>favicon.png">
 	<link rel="stylesheet" href="<?= PLUGINS?>fontawesome-free/css/all.min.css">
+	<link rel="stylesheet" href="<?= CSS_VENDORS?>bootstrap.min.css">
 	<link rel="stylesheet" href="<?= CSS?>style.main.css">
-	<link rel="stylesheet" href="<?= CSS_VENDORS?>style-freedom.css">
-	<link rel="stylesheet" href="<?= CSS_VENDORS?>css">
 	<title><?= $data['page_name'] ?></title>
 </head>
 

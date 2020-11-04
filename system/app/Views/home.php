@@ -1,86 +1,32 @@
 <?= header_main($data) ?>
 
-<!-- header -->
-<div class="w3l-headers-9">
-	<header>
-		<div class="wrapper">
-			<div class="header">
-				<div class="right-img-9">
-					<a class="d-flex align-items-center" href="<?= base_url()?>home">
-						<img src="<?= IMG?>favicon.png" alt="Logo" title="Your logo" style="height:35px;" />
-						<h5 class="logo"></h5>
-					</a>
-				</div>
-				<div class="bottom-menu-content">
-					<input type="checkbox" id="nav">
-					<label for="nav" class="menu-bar"></label>
-					<nav>
-						<!-- search -->
-						<section class="w3l-search-form-3-main">
-							<div class="wrapper">
-								<div class="section-width">
-									<form class="search-3-gd">
-										<div class="d-flex grids-icon">
-											<span class="fas fa-text-height" aria-hidden="true"></span>
-											<input type="search" name="text" placeholder="Enter Keywords here.." required="">
-										</div>
-										<div class="d-flex grids-icon grids-icon-2">
-											<span class="fas fa-tags" aria-hidden="true"></span>
-											<div class="input-group-btn">
-												<select class="btn btn-default" name="ext" required="">
-													<option selected="">Select Category</option>
-													<option>Electronics </option>
-													<option>Furniture </option>
-													<option>Jobs</option>
-													<option>Real Estate</option>
-													<option>Sports</option>
-													<option>Health &amp; Beauty</option>
-													<option>And more</option>
-												</select>
-											</div>
-										</div>
-										<!-- <div class="d-flex grids-icon grids-icon-2">
-											<span class="fa fa-map-marker" aria-hidden="true"></span>
-											<div class="input-group-btn">
-												<select class="btn btn-default" name="ext" required="">
-													<option selected="">Select Country</option>
-													<option>Australia</option>
-													<option>London</option>
-													<option>India</option>
-													<option>Bangladesh</option>
-													<option>Saudi Arabia</option>
-													<option>America</option>
-													<option>Srilanka</option>
-												</select>
-											</div>
-										</div> -->
-										<button type="submit" class="btn button-eff"><span class="fas fa-search"
-												aria-hidden="true"></span>Search</button>
-									</form>
-								</div>
-							</div>
-						</section>
-						<!-- search -->
-					</nav>
-				</div>
-			</div>
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-light">
+	<div class="container">
+		<a class="navbar-brand" href="#">
+			<img src="<?= IMG?>favicon.png" width="35" heitgh="35" alt="">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
+			aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarsExample02">
+			<ul class="navbar-nav mr-auto">
+
+			</ul>
+			<form class="form-inline my-2 my-md-0">
+				<input class="form-control" type="text" placeholder="Busqueda de articulo">
+			</form>
 		</div>
-	</header>
-	<!-- //header -->
-	<script src="<?= JS_VENDORS?>jquery.min.js"></script>
-	<script>
-	$('#nav').change(function() {
-		if ($('#nav').is(":checked")) {
-			$('body').css('overflow', 'hidden');
-		} else {
-			$('body').css('overflow', 'auto');
-		}
-	});
-	</script>
-</div>
+	</div>
+</nav>
+<!-- //nav -->
+
 <!-- banner -->
-<section class="w3l-banner-3-main">
-	<div class="banner-3">
+
+<section class="banner-main">
+	<div class="banner">
 		<div class="wrapper">
 			<div class="cover-top-center-9">
 				<div class="w3ls_cover_txt-9">
@@ -93,20 +39,19 @@
 	</div>
 </section>
 <!-- //banner -->
-
-<!-- galeria de productos -->
-<div class="w3l-products-4">
-	<div id="products4-block" class="text-center">
-		<div class="wrapper">
-			<input id="tab1" type="radio" name="tabs" checked="">
-			<label class="tabtle" for="tab1">Latest Ads</label>
-			<section id="content1" class="tab-content text-left">
-				<div class="d-grid grid-col-3 boxProduct">
-
-
-				</div>
-			</section>
-		</div>
+<section class="jumbotron text-center">
+	<div class="container">
+		<h1>Muestras de productos</h1>
+		<p class="lead text-muted">muestra de articulos a la venta, puede seleccionar y ver el producto o hacer una busqueda
+			mas personalizada</p>
+		<p>
+			<a href="#" class="btn btn-primary my-2">Ir a busquedas</a>
+			<a href="#" class="btn btn-secondary my-2">Secondary action</a>
+		</p>
 	</div>
+</section>
+<!-- galeria de productos -->
+<div class="container mt-5">
+	<div class="row row-cols-2 row-cols-md-4 boxProduct"></div>
 </div>
 <?= footer_main($data) ?>
