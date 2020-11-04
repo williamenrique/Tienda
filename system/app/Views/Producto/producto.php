@@ -1,5 +1,4 @@
 <?= header_main($data)?>
-<?= header_main($data)?>
 <link rel="stylesheet" href="<?= CSS_VENDORS?>style-freedom.css">
 <!-- inner banner about -->
 <section class="inner-banner-main">
@@ -20,12 +19,12 @@
 <section class="w3l-products-page w3l-blog-single w3l-products-4">
 	<div class="single blog">
 		<div class="wrapper">
-			<h3 class="title-main">Product Single Ad</h3>
+			<h3 class="title-main">Descripcion del producto</h3>
 			<div class="grid-colunm-2 d-flex">
 				<!-- barra izquierda contenido -->
 				<div class="tab-content text-left single-left-content left-product-sing">
-					<h3 class="aside-title single-prt">MacBook 2020 with 256 SSD and 8GB RAM</h3>
-					<p class="para-single">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+					<h3 class="aside-title single-prt">Titulo completo</h3>
+					<p class="para-single">Breve introduccion</p>
 					<!-- image -->
 					<div id="slider" class="section-gap">
 						<div class="owl-carousel owl-theme owl-loaded owl-drag">
@@ -67,7 +66,7 @@
 					<!-- //image -->
 					<!-- detalles -->
 					<div class="top-sing-sec">
-						<h3 class="aside-title">Ad Details</h3>
+						<h3 class="aside-title">Detalles</h3>
 						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
 							laudantium,
 							totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
@@ -88,10 +87,10 @@
 						<h3 class="aside-title top-sec-space">Features</h3>
 						<div class="d-grid list-styles">
 							<ul class="ad-lists">
-								<li><span class="fa fa-check-circle" aria-hidden="true"></span>Lorem ipsum dolor sit
+								<li><span class="fas fa-check-circle" aria-hidden="true"></span>Lorem ipsum dolor sit
 									amet
 								</li>
-								<li><span class="fa fa-check-circle" aria-hidden="true"></span>Consectetur
+								<li><span class="fas fa-check-circle" aria-hidden="true"></span>Consectetur
 									adipiscing
 									elit
 								</li>
@@ -117,39 +116,20 @@
 									consequat</li>
 							</ul>
 						</div>
-						<div class="map-single product-details-top">
+						<div class="map-single product-details-top" style="width: auto">
 							<div class="d-grid some-text-spe">
 								<div class="left-cont">
-									<h4><span class="w3layouts-agileinfo">Price </span> : <p>$ 1200</p>
+									<h4><span class="w3layouts-agileinfo">Precio </span> : <p>$ 1200</p>
 									</h4>
-									<h4><span class="w3layouts-agileinfo">Type </span> : <p><a
-												href="https://demo.w3layouts.com/demosWTR/Freedom/30-11-2019/classify-freedom-demo_Free/1657745905/web/product-single.html#">
-												Electronics</a>,
-											For
-											sale</p>
+									<h4><span class="w3layouts-agileinfo">Tipo </span> : <p>Electronics</p>
 									</h4>
-									<h4><span class="w3layouts-agileinfo">Location </span> : <p>London</p>
+									<h4><span class="w3layouts-agileinfo">Ubicacion </span> : <p>London</p>
 									</h4>
-									<h4><span class="w3layouts-agileinfo">Condition </span> : <p>New</p>
+									<h4><span class="w3layouts-agileinfo">Condicion </span> : <p>New</p>
 									</h4>
-									<h4><span class="w3layouts-agileinfo">Brand </span> : <p><a
-												href="https://demo.w3layouts.com/demosWTR/Freedom/30-11-2019/classify-freedom-demo_Free/1657745905/web/product-single.html#single">
-												Company
-												name</a>
+									<h4><span class="w3layouts-agileinfo">Publicacion </span> : <p> lun, 29 de
 										</p>
 									</h4>
-									<h4><span class="w3layouts-agileinfo">Views </span> : <p><strong> 150</strong>
-										</p>
-									</h4>
-								</div>
-								<div class="right-cont-single">
-									<h3 class="aside-title">Safety Tips for Buyers</h3>
-									<ul>
-										<li>Contrary to popular belief.</li>
-										<li>Contrary to popular belief.</li>
-										<li>Contrary to popular belief.</li>
-										<li>Contrary to popular belief.</li>
-									</ul>
 								</div>
 							</div>
 						</div>
@@ -192,4 +172,3 @@
 </section>
 
 <?= footer_main($data)?>
-

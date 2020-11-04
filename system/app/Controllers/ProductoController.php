@@ -8,4 +8,10 @@ class Producto extends Controllers{
 			$data['page_name'] = "Producto - Tienda";
 		$this->views->getViews($this, "producto",$data);
 	}
+
+
+		public function busqueda(){
+			$data['page_name'] = "Busqueda - Tienda";
+		$this->views->getViews($this, "busqueda",$data);
+	}
 }

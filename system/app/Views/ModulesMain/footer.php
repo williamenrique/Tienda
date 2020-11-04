@@ -10,7 +10,7 @@
 </footer>
 <!-- copyright -->
 <!-- move top -->
-<button onclick="topFunction()" id="movetop" title="Go to top" style="display: block;">
+<button onclick="topFunction()" id="movetop" style="display:none" title="Go to top" style="display: block;">
 	<span class="fas fa-arrow-up" aria-hidden="true"></span>
 </button>
 <script>
@@ -41,6 +41,8 @@ const base_url = "<?= base_url()?>";
 <script src="<?= JS_VENDORS?>jquery.min.js"></script>
 <script src="<?= JS_VENDORS?>bootstrap.bundle.min.js"></script>
 <script src="<?= PLUGINS?>owl.carousel/owl.carousel.js"></script>
+<!-- <script src="<?= PLUGINS?>autotrack/autotrack.js"></script>
+<script src="<?= PLUGINS?>autotrack/js"></script> -->
 <script src="<?= JS?><?= $data['page_functions']?>"></script>
 <script src="<?= JS?>function.main.js"></script>
 

@@ -46,7 +46,7 @@
 		<p class="lead text-muted">muestra de articulos a la venta, puede seleccionar y ver el producto o hacer una busqueda
 			mas personalizada</p>
 		<p>
-			<a href="#" class="btn btn-primary my-2">Ir a busquedas</a>
+			<a href="<?= base_url()?>producto/busqueda" class="btn btn-primary my-2">Ir a busquedas</a>
 			<a href="#" class="btn btn-secondary my-2">Secondary action</a>
 		</p>
 	</div>
