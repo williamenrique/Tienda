@@ -40,10 +40,10 @@ const base_url = "<?= base_url()?>";
 </script>
 <script src="<?= JS_VENDORS?>jquery.min.js"></script>
 <script src="<?= JS_VENDORS?>bootstrap.bundle.min.js"></script>
-<script src="<?= JS_VENDORS?>autotrack.js"></script>
-<script src="<?= JS_VENDORS?>js"></script>
+<script src="<?= PLUGINS?>owl.carousel/owl.carousel.js"></script>
 <script src="<?= JS?><?= $data['page_functions']?>"></script>
 <script src="<?= JS?>function.main.js"></script>
+
 </body>
 
 </html>

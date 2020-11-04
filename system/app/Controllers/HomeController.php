@@ -24,25 +24,16 @@ class Home extends Controllers{
 							'
 							<div class="col mb-4">
 								<div class="card h-100">
-									<div style="overflow: hidden; height: 200px;background: url('.IMG.'items/'.$item["product_img"].') no-repeat center; background-size: cover"></div>
+									<div style="overflow: hidden; height: 200px;background: url('.IMG.'items/'.$item["product_img"].') no-repeat center; background-size: cover" data-toggle="tooltip" data-placement="bottom" title="'.$item["product_nombre"].'"></div>
 									<div class="card-body">
 										<h5 class="card-title"><a href="'.base_url().'producto">'.$item["product_nombre"].'</a></h5>
 										<p class="card-text">'.$item["product_descripcion"].'</p>
 										<div class="d-flex justify-content-between align-items-center">
-											<div class="">
-												<ul class="nav flex-column mb-2">
-													<li class="nav-item">
-													Precio : <span class="text-danger" data-toggle="tooltip" data-placement="bottom" title="Precio por el propietario">$'.$item["product_precio"].'</span>
-													</li>
-													<li class="nav-item">Condicion : '.$condition.'</li>
-												</ul>
-											</div>
-
+													<span class="text-danger" data-toggle="tooltip" data-placement="bottom" title="Precio por el propietario">$'.$item["product_precio"].'</span>
+												'.$condition.'
 										</div>
 									</div>
-									<div class="py-2 pl-2">
-									<small class="text-muted">'.formatear_fecha($item["product_fechaPublicacion"]).'</small>
-									</div>
+									<small class="py-2 pl-4 text-muted">'.formatear_fecha($item["product_fechaPublicacion"]).'</small>
 								</div>
 							</div>
 							';

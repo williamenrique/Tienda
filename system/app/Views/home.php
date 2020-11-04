@@ -15,8 +15,9 @@
 			<ul class="navbar-nav mr-auto">
 
 			</ul>
-			<form class="form-inline my-2 my-md-0">
-				<input class="form-control" type="text" placeholder="Busqueda de articulo">
+			<form class="form-inline my-2 my-md-0" id="formBusqueda">
+				<input class="form-control" type="search" name="txtBusqueda" id="txtBusqueda"
+					placeholder="Busqueda de articulo">
 			</form>
 		</div>
 	</div>
