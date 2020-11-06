@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `db_tienda` /*!40100 DEFAULT CHARACTER SET utf8 *
 USE `db_tienda`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: db_tienda
+-- Host: 127.0.0.1    Database: db_tienda
 -- ------------------------------------------------------
 -- Server version	5.7.29-log
 
@@ -25,10 +25,10 @@ DROP TABLE IF EXISTS `table_caracteristica`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `table_caracteristica` (
-  `caract_id` int(11) NOT NULL AUTO_INCREMENT,
-  `caract_idProduct` int(11) DEFAULT NULL,
-  `caract_item` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`caract_id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idProducto` int(11) DEFAULT NULL,
+  `caracteristica` text,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -42,85 +42,103 @@ LOCK TABLES `table_caracteristica` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `table_categoria`
+-- Table structure for table `table_condicion`
 --
 
-DROP TABLE IF EXISTS `table_categoria`;
+DROP TABLE IF EXISTS `table_condicion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `table_categoria` (
-  `categ_id` int(11) NOT NULL AUTO_INCREMENT,
-  `categ_nombre` varchar(45) DEFAULT NULL,
-  `categ_status` char(1) DEFAULT NULL,
-  PRIMARY KEY (`categ_id`)
+CREATE TABLE `table_condicion` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `condicion` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `table_condicion`
+--
+
+LOCK TABLES `table_condicion` WRITE;
+/*!40000 ALTER TABLE `table_condicion` DISABLE KEYS */;
+INSERT INTO `table_condicion` VALUES (1,'Nuevo'),(2,'Usado'),(3,'Usado-Buena Condicion');
+/*!40000 ALTER TABLE `table_condicion` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `table_contacto_item`
+--
+
+DROP TABLE IF EXISTS `table_contacto_item`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `table_contacto_item` (
+  `idContacto` int(11) DEFAULT NULL,
+  `idItem` int(11) DEFAULT NULL,
+  `tipo` int(11) DEFAULT NULL,
+  `condicion` int(11) DEFAULT NULL,
+  `caracteristica` int(11) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `table_categoria`
+-- Dumping data for table `table_contacto_item`
 --
 
-LOCK TABLES `table_categoria` WRITE;
-/*!40000 ALTER TABLE `table_categoria` DISABLE KEYS */;
-/*!40000 ALTER TABLE `table_categoria` ENABLE KEYS */;
+LOCK TABLES `table_contacto_item` WRITE;
+/*!40000 ALTER TABLE `table_contacto_item` DISABLE KEYS */;
+/*!40000 ALTER TABLE `table_contacto_item` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `table_contacto_producto`
+-- Table structure for table `table_item`
 --
 
-DROP TABLE IF EXISTS `table_contacto_producto`;
+DROP TABLE IF EXISTS `table_item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `table_contacto_producto` (
-  `contacto_id` int(11) NOT NULL AUTO_INCREMENT,
-  `contacto_idProducto` int(11) DEFAULT NULL,
-  `contacto_nombre` varchar(45) DEFAULT NULL,
-  `contacto_apellido` varchar(45) DEFAULT NULL,
-  `contacto_direccion` varchar(45) DEFAULT NULL,
-  `contacto_tlf` varchar(45) DEFAULT NULL,
-  `contacto_tlf2` varchar(45) DEFAULT NULL,
-  `contacto_email` varchar(45) DEFAULT NULL,
-  `contacto_status` int(11) DEFAULT NULL,
-  PRIMARY KEY (`contacto_id`)
+CREATE TABLE `table_item` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` text,
+  `subTitulo` text,
+  `descripcion` text,
+  `descripcionBreve` text,
+  `precio` double DEFAULT NULL,
+  `fechaPublicacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `table_item`
+--
+
+LOCK TABLES `table_item` WRITE;
+/*!40000 ALTER TABLE `table_item` DISABLE KEYS */;
+/*!40000 ALTER TABLE `table_item` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `table_item_vista`
+--
+
+DROP TABLE IF EXISTS `table_item_vista`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `table_item_vista` (
+  `idItem` int(11) DEFAULT NULL,
+  `visita` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `table_contacto_producto`
+-- Dumping data for table `table_item_vista`
 --
 
-LOCK TABLES `table_contacto_producto` WRITE;
-/*!40000 ALTER TABLE `table_contacto_producto` DISABLE KEYS */;
-/*!40000 ALTER TABLE `table_contacto_producto` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `table_log`
---
-
-DROP TABLE IF EXISTS `table_log`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `table_log` (
-  `log_id` int(11) NOT NULL AUTO_INCREMENT,
-  `log_idUser` int(11) DEFAULT NULL,
-  `log_descripcion` text CHARACTER SET utf8,
-  `log_comando` text CHARACTER SET utf8,
-  `log_fecha` date DEFAULT NULL,
-  PRIMARY KEY (`log_id`),
-  KEY `log_idUser_idx` (`log_idUser`),
-  CONSTRAINT `log_idUser` FOREIGN KEY (`log_idUser`) REFERENCES `table_user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `table_log`
---
-
-LOCK TABLES `table_log` WRITE;
-/*!40000 ALTER TABLE `table_log` DISABLE KEYS */;
-/*!40000 ALTER TABLE `table_log` ENABLE KEYS */;
+LOCK TABLES `table_item_vista` WRITE;
+/*!40000 ALTER TABLE `table_item_vista` DISABLE KEYS */;
+/*!40000 ALTER TABLE `table_item_vista` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -176,36 +194,6 @@ LOCK TABLES `table_menu_sub_menu` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `table_producto`
---
-
-DROP TABLE IF EXISTS `table_producto`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `table_producto` (
-  `product_id` int(11) NOT NULL AUTO_INCREMENT,
-  `product_img` text,
-  `product_nombre` varchar(45) DEFAULT NULL,
-  `product_descripcion` text,
-  `product_categoria` varchar(45) DEFAULT NULL,
-  `product_precio` double DEFAULT NULL,
-  `product_condicion` char(1) DEFAULT NULL,
-  `product_status` char(1) DEFAULT NULL,
-  `product_fechaPublicacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `table_producto`
---
-
-LOCK TABLES `table_producto` WRITE;
-/*!40000 ALTER TABLE `table_producto` DISABLE KEYS */;
-/*!40000 ALTER TABLE `table_producto` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `table_roles`
 --
 
@@ -213,11 +201,11 @@ DROP TABLE IF EXISTS `table_roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `table_roles` (
-  `rol_id` int(11) NOT NULL AUTO_INCREMENT,
+  `idRol` int(11) NOT NULL AUTO_INCREMENT,
   `rol_name` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
   `rol_descripcion` text COLLATE utf8_spanish_ci,
   `rol_status` int(11) DEFAULT NULL,
-  PRIMARY KEY (`rol_id`)
+  PRIMARY KEY (`idRol`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -289,13 +277,13 @@ DROP TABLE IF EXISTS `table_timeline`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `table_timeline` (
-  `time_id` int(11) NOT NULL AUTO_INCREMENT,
-  `time_idUser` int(11) DEFAULT NULL,
-  `time_codigo` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `time_fecha` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `time_inicio` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `time_fin` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
-  PRIMARY KEY (`time_id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idUser` int(11) DEFAULT NULL,
+  `codigo` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `fecha` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `inicio` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `fin` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -309,6 +297,31 @@ LOCK TABLES `table_timeline` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `table_tipo`
+--
+
+DROP TABLE IF EXISTS `table_tipo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `table_tipo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(100) DEFAULT NULL,
+  `status` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `table_tipo`
+--
+
+LOCK TABLES `table_tipo` WRITE;
+/*!40000 ALTER TABLE `table_tipo` DISABLE KEYS */;
+INSERT INTO `table_tipo` VALUES (1,'Vehiculos',1),(2,'Articulos Deportivos',1),(3,'Articulos para el hogar',1),(4,'Electrodomesticos',1),(5,'Entretenimiento',1),(6,'Juguetes',1),(7,'Materiales para el hogar',1),(8,'Viviendas',1),(9,'Productos para mascotas',1),(10,'Articulos de oficina',1),(11,'Repuestos de vehiculos',1);
+/*!40000 ALTER TABLE `table_tipo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `table_user`
 --
 
@@ -316,21 +329,20 @@ DROP TABLE IF EXISTS `table_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `table_user` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_ci` int(11) DEFAULT NULL,
+  `idContacto` int(11) NOT NULL AUTO_INCREMENT,
   `user_nick` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `user_pass` text COLLATE utf8_spanish_ci,
-  `user_nombres` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `user_apellidos` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `user_email` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `user_tlf` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `user_rol` int(11) DEFAULT NULL,
-  `user_status` int(11) DEFAULT NULL,
-  `user_img` text COLLATE utf8_spanish_ci,
-  `user_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `user_ruta` text COLLATE utf8_spanish_ci,
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `user_pass` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `nombre` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `apellidos` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `direccion` text COLLATE utf8_spanish_ci,
+  `email` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `tlf1` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `tlf2` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `status` text COLLATE utf8_spanish_ci,
+  `registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `ruta` text COLLATE utf8_spanish_ci,
+  PRIMARY KEY (`idContacto`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -378,7 +390,7 @@ SET character_set_client = utf8;
  1 AS `login`,
  1 AS `nombres`,
  1 AS `apellidos`,
- 1 AS `rol_id`,
+ 1 AS `idRol`,
  1 AS `rol_name`,
  1 AS `id_menu`,
  1 AS `nombre_menu`,
@@ -404,7 +416,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `v_carga_menu` AS (select `a`.`user_nick` AS `login`,`a`.`user_nombres` AS `nombres`,`a`.`user_apellidos` AS `apellidos`,`f`.`rol_id` AS `rol_id`,`f`.`rol_name` AS `rol_name`,`e`.`id_menu` AS `id_menu`,`e`.`nombre_menu` AS `nombre_menu`,`e`.`icono` AS `icono`,`e`.`page_menu_open` AS `page_menu_open`,`e`.`page_link` AS `page_link`,`g`.`id_sub_menu` AS `id_sub_menu`,`g`.`nombre_sub_menu` AS `nombre_sub_menu`,`g`.`url` AS `url`,`g`.`page_link_activo` AS `page_link_activo` from ((((((`table_user` `a` join `table_user_rol` `b`) join `table_roles_sub_menu` `c`) join `table_menu_sub_menu` `d`) join `table_menu` `e`) join `table_roles` `f`) join `table_sub_menu` `g`) where ((`a`.`user_nick` = `b`.`user_nick`) and (`b`.`id_rol` = `f`.`rol_id`) and (`f`.`rol_id` = `c`.`id_rol`) and (`c`.`id_sub_menu` = `g`.`id_sub_menu`) and (`g`.`id_sub_menu` = `d`.`id_sub_menu`) and (`e`.`id_menu` = `d`.`id_menu`) and (`e`.`status` = 1))) */;
+/*!50001 VIEW `v_carga_menu` AS (select `a`.`user_nick` AS `login`,`a`.`nombre` AS `nombres`,`a`.`apellidos` AS `apellidos`,`f`.`idRol` AS `idRol`,`f`.`rol_name` AS `rol_name`,`e`.`id_menu` AS `id_menu`,`e`.`nombre_menu` AS `nombre_menu`,`e`.`icono` AS `icono`,`e`.`page_menu_open` AS `page_menu_open`,`e`.`page_link` AS `page_link`,`g`.`id_sub_menu` AS `id_sub_menu`,`g`.`nombre_sub_menu` AS `nombre_sub_menu`,`g`.`url` AS `url`,`g`.`page_link_activo` AS `page_link_activo` from ((((((`table_user` `a` join `table_user_rol` `b`) join `table_roles_sub_menu` `c`) join `table_menu_sub_menu` `d`) join `table_menu` `e`) join `table_roles` `f`) join `table_sub_menu` `g`) where ((`a`.`user_nick` = `b`.`user_nick`) and (`b`.`id_rol` = `f`.`idRol`) and (`f`.`idRol` = `c`.`id_rol`) and (`c`.`id_sub_menu` = `g`.`id_sub_menu`) and (`g`.`id_sub_menu` = `d`.`id_sub_menu`) and (`e`.`id_menu` = `d`.`id_menu`) and (`e`.`status` = 1))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -418,4 +430,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-31  9:22:16
+-- Dump completed on 2020-11-06 18:10:36
