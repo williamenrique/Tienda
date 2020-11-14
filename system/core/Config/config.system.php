@@ -1,5 +1,5 @@
 <?php
-const BASE_URL = "http://tienda.lat/";
+const BASE_URL = "http://tiendavirtual.lat/";
 const HEAD = "src/include/head.php";
 const FOOTER = "src/include/footer.php";
 //const BACK_URL = $_SERVER['REQUEST_URI'];
@@ -25,7 +25,7 @@ const LOAD = BASE_URL."system/core/Libraries/Load.php";
 //constantes de base de datos
 const DB_HOST = "localhost";
 const DB_USER = "root";
-const DB_PASS = "root";
+const DB_PASS = "";
 const DB_NAME = "db_tienda";
 const DB_CHARSET = "charset=utf8";
 
